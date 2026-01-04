@@ -11,7 +11,8 @@ import Blog from "./pages/Blog";
 import Innovation from "./pages/Innovation";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-
+import AdminInnovation from "./pages/AdminInnovation";
+import ProjectDetail from "./pages/ProjectDetail";
 function App() {
   return (
     <div className="bg-slate-950 text-slate-100 min-h-screen">
@@ -31,8 +32,10 @@ function App() {
               <Route path="/skills" element={<Skills />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/innovation" element={<Innovation />} />
+              <Route path="/admin/innovation" element={<AdminInnovation />} />
               <Route path="/contact" element={<Contact />} />
               {/* 404 catch-all */}
+              <Route path="/projects/:id" element={<ProjectDetail />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimWrapper>

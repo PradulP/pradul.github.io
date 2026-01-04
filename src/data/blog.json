@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Why I Care About Digital Tools as a Civil Engineer",
+      "date": "2025-11-01",
+      "summary": "A short reflection on how even simple tools like a money tracker or a Google Sheets workflow can save time in real projects.",
+      "content": "A short reflection on how small practical tools—like a money tracker or Google Sheets automations—save time in real projects, reduce human error and allow engineers to focus on design and coordination.",
+      "tag": "Tools",
+      "status": "published",
+      "readTime": "4 min",
+      "url": ""
+    },
+    {
+      "id": 2,
+      "title": "First Steps Into BIM & Revit Automation",
+      "date": "2025-11-10",
+      "summary": "Notes from early experiments with Revit, pyRevit and small automation ideas.",
+      "content": "Notes from experiments with pyRevit, Dynamo and automating repetitive tasks: view naming, parameter checks, and automatic sheet creation.",
+      "tag": "Automation",
+      "status": "published",
+      "readTime": "7 min",
+      "url": ""
+    },
+    {
+      "id": 3,
+      "title": "Balancing Site Work, Office, and Learning to Code",
+      "date": "2025-02-20",
+      "summary": "How to manage learning while handling site visits and project work.",
+      "content": "Practical routines and small habits that helped me continue learning JavaScript/React while working on site and producing drawings.",
+      "tag": "Career",
+      "status": "planned",
+      "readTime": "5 min",
+      "url": ""
+    }
+  ]
+}

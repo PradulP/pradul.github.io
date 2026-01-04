@@ -2,15 +2,27 @@ import { useState } from "react";
 import content from "../content.json";
 import SectionTitle from "../components/SectionTitle";
 
+
+function getEndYear(item) {
+  const text = item.period || item.years || "";
+  if (text.toLowerCase().includes("present")) return 9999;
+  const match = text.match(/\d{4}/g);
+  return match ? Number(match[match.length - 1]) : 0;
+}
+
 export default function Experience() {
   const { experience = [], education = [] } = content;
 
   const [tab, setTab] = useState("experience"); // "experience" | "education"
 
   const items =
-    tab === "experience"
-      ? experience.map((e) => ({ ...e, kind: "experience" }))
-      : education.map((e) => ({ ...e, kind: "education" }));
+  tab === "experience"
+    ? [...experience]
+        .sort((a, b) => getEndYear(b) - getEndYear(a))
+        .map((e) => ({ ...e, kind: "experience" }))
+    : [...education]
+        .sort((a, b) => getEndYear(b) - getEndYear(a))
+        .map((e) => ({ ...e, kind: "education" }));
 
   return (
     <main className="pt-8 md:pt-10 pb-16">
@@ -156,31 +168,53 @@ function TimelineCardInner({ item }) {
 
   return (
     <>
+    {/* {item.kind && (
+  <span className="inline-block mb-1 text-[10px] px-2 py-0.5 rounded-full border border-slate-700 text-slate-300">
+    {item.kind === "experience" ? "Experience" : "Education"}
+  </span>
+)} */}
       {period && (
         <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">
           {period}
         </p>
       )}
+
       <h4 className="text-sm md:text-base font-semibold text-slate-100 mb-0.5">
         {title}
       </h4>
+
       {place && (
-        <p className="text-[11px] text-slate-400 mb-1 whitespace-pre-line">
+        <p className="text-[14px] text-slate-400 mb-1 whitespace-pre-line">
           {place}
         </p>
       )}
+
+      {/* EXPERIENCE POINTS */}
       {Array.isArray(item.points) && item.points.length > 0 && (
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc list-inside space-y-1 mt-1">
           {item.points.slice(0, 4).map((pt) => (
             <li key={pt}>{pt}</li>
           ))}
         </ul>
       )}
-      {item.description && !item.points && (
+
+      {/* EDUCATION DESCRIPTION */}
+      {item.description && (
         <p className="text-xs md:text-sm text-slate-300 mt-1">
           {item.description}
         </p>
       )}
+
+      {/* EDUCATION HIGHLIGHTS */}
+     {Array.isArray(item.highlights) && item.highlights.length > 0 && (
+  <ul className="list-disc list-inside space-y-1 mt-2 text-xs md:text-sm text-slate-300">
+    {(window.innerWidth < 768 ? item.highlights.slice(0, 2) : item.highlights).map((h) => (
+      <li key={h}>{h}</li>
+    ))}
+  </ul>
+)}
+
     </>
   );
 }
+

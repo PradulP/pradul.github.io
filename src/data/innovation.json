@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "LUDARP BIM Toolkit",
+      "type": "BIM Automation",
+      "status": "In progress",
+      "description": "A collection of pyRevit scripts and Dynamo graphs to speed up modelling, sheet production, and QA in Revit.",
+      "details": "Includes small utilities for view/sheet naming, parameter checks, and repetitive modelling tasks. The focus is on practical tools that actually save time on real projects rather than big frameworks.",
+      "tech": ["Revit", "pyRevit", "Dynamo", "Python"],
+      "hasTool": true,
+      "showOnHome": true
+    },
+    {
+      "id": 2,
+      "title": "Site Logs → Dashboard",
+      "type": "Data & Visualization",
+      "status": "Concept",
+      "description": "Idea for turning daily site logs, photos, and checklists into a live dashboard using simple web tools and spreadsheets.",
+      "details": "Keep data entry lightweight (forms, sheets, WhatsApp) and convert it into visuals: progress curves, issue lists, and pending RFIs.",
+      "tech": ["Sheets", "React", "Tailwind", "Charts"],
+      "hasTool": false
+    },
+    {
+      "id": 3,
+      "title": "AEC Portfolio Engine",
+      "type": "Web Tools",
+      "status": "Live",
+      "description": "This portfolio itself: a modular template for engineers combining experience, BIM projects, and code in one place.",
+      "details": "Built with React, Vite and Tailwind. Focuses on clean sections for experience, projects, BIM work and web tools — reusable as a starter for other engineers.",
+      "tech": ["React", "Vite", "Tailwind"],
+      "hasTool": true,
+      "showOnHome": true
+    },
+    {
+      "id": 4,
+      "title": "Learning Hub for Juniors",
+      "type": "Learning",
+      "status": "Future idea",
+      "description": "Plan for a small platform / playlist that explains BIM basics, drawings, and site coordination using simple examples.",
+      "details": "Mix YouTube short videos, Notion guides and small reproducible examples that connect site photos with drawings and BIM views.",
+      "tech": ["Content", "YouTube", "Notion"],
+      "hasTool": false
+    },
+    {
+      "id": 5,
+      "title": "Lears",
+      "type": "Learning",
+      "status": "Future idea",
+      "description": "Plan for a small platform / playlist that explains BIM basics, drawings, and site coordination using simple examples.",
+      "details": "Mix YouTube short videos, Notion guides and small reproducible examples that connect site photos with drawings and BIM views.",
+      "tech": ["Content", "YouTube", "Notion"],
+      "hasTool": false
+    }
+  ]
+}
